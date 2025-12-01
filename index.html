@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <!-- import favicon -->
-    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="./assets/images/menas-favicon-min.png"
+      type="image/x-icon"
+    />
     <!-- meta -->
     <meta property="og:url" content="" />
     <meta property="og:type" content="website" />
@@ -35,7 +39,16 @@
       }
     </style>
   </head>
+
   <body>
+    <script>
+      fetch("./components/popup_select.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("popup_select").innerHTML = data;
+        });
+    </script>
+    <div id="popup_select"></div>
     <!-- layout -->
     <!-- header -->
     <script>
@@ -104,6 +117,7 @@
     <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
     <script src="./assets/libs/swiper-bundle.min.js"></script>
     <!-- import custom js -->
+    <script src="./assets/main/js/popup-select.min.js"></script>
     <script type="module" src="./assets/main/js/script.min.js"></script>
 
     <!-- end import custom js -->

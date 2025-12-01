@@ -1,0 +1,140 @@
+.popup-select {
+  &-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background-image: url("../../images/bg-popup.webp");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--color-bg);
+      z-index: 2;
+      opacity: 0.95;
+    }
+    .dropdown-wrapper {
+      position: relative;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+    .dropdown-input {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 12px;
+      border-bottom: 1px solid rgba(26, 61, 78, 0.3);
+      padding-bottom: 12px;
+      input {
+        flex: 1;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+        color: var(--color-text);
+      }
+    }
+    .icon-location {
+      flex-shrink: 0;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      background-color: var(--color-bg);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      display: block;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .dropdown-item {
+        p {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+          color: var(--color-text);
+        }
+        &.selected {
+        }
+      }
+    }
+  }
+  &-main {
+    position: relative;
+    z-index: 10;
+    width: 450px;
+    height: 240px;
+    padding: 24px 24px 16px;
+    border-radius: 8px;
+    background: linear-gradient(
+      134.54deg,
+      rgba(255, 200, 182, 0.5) -13.65%,
+      #ffffff 32.19%,
+      #ffffff 80.8%
+    );
+  }
+  &-title {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  &-tabs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 12px;
+    .tab-btn {
+      flex: 1;
+      padding: 6px 16px;
+      border-radius: 16px;
+      white-space: nowrap;
+      background-color: #fff8f3;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid transparent;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 600;
+      &:hover {
+        border: 1px solid var(--color-text);
+      }
+      &.active {
+        border: 1px solid var(--color-text);
+      }
+    }
+  }
+  &-discover {
+    .discover-btn {
+      width: 100%;
+      height: 40px;
+      background-color: var(--color-text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid var(--color-text);
+      &:hover {
+        background-color: transparent;
+        color: var(--color-text);
+      }
+    }
+  }
+}
