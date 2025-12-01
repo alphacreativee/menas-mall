@@ -38,6 +38,7 @@ function generateTabs() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  if (!document.querySelector(".popup-select-wrapper")) return;
   loadLocationsFromHTML();
   generateTabs();
 

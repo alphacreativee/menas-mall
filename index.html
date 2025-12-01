@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
     <!-- end meta -->
     <!-- link custom css page -->
+    <link rel="stylesheet" href="./assets/fonts/SVN-Graphik/stylesheet.css" />
     <link rel="stylesheet" href="./assets/main/css/style.min.css" />
+
     <!-- end link custom css page -->
     <!-- scrollRestoration -->
     <script>
@@ -48,7 +50,7 @@
           document.getElementById("popup_select").innerHTML = data;
         });
     </script>
-    <div id="popup_select"></div>
+    <div id="popup_select" class="d-none"></div>
     <!-- layout -->
     <!-- header -->
     <script>
@@ -71,18 +73,31 @@
               normalizedLinkPath = normalizedLinkPath.substring(1);
             }
 
-            // For GitHub Pages, get the last segment of the path
-            const currentSegment =
-              normalizedCurrentPath.split("/").pop() || "/";
-            const linkSegment = normalizedLinkPath.split("/").pop() || "/";
+            // Get the last segment of the path
+            const currentSegment = normalizedCurrentPath.split("/").pop() || "";
+            const linkSegment = normalizedLinkPath.split("/").pop() || "";
 
-            // Check if paths match
+            // Check if current path is root or ends with /
+            const isRootPath =
+              currentPath === "/" ||
+              currentPath.endsWith("/") ||
+              currentSegment === "";
+
+            // Check if link is home/index
+            const isHomeLink =
+              linkPath === "/" ||
+              linkPath === "./" ||
+              linkPath === "./index.html" ||
+              linkPath === "index.html" ||
+              linkSegment === "index.html";
+
+            // Match logic
             const isMatch =
               normalizedLinkPath === normalizedCurrentPath || // Exact match
               currentSegment === linkSegment || // Segment match
+              (isRootPath && isHomeLink) || // Root path matches home link
               (currentPath.endsWith(normalizedLinkPath) &&
-                normalizedLinkPath !== "/") || // Ends with
-              (currentPath === "/" && (linkPath === "/" || linkPath === "./")); // Home page
+                normalizedLinkPath !== "/");
 
             if (isMatch) {
               link.classList.add("active");
@@ -93,7 +108,163 @@
     <header id="header"></header>
     <!-- end header -->
     <main>
-      <h1>helo</h1>
+      <section class="hero has-slider">
+        <div class="container-fluid p-0">
+          <div class="hero-sec__container">
+            <div class="swiper swiper-banner">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="slide-banner">
+                    <img srcset="./assets/images/banner-1.webp" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-banner">
+                    <img srcset="./assets/images/banner-2.webp" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-banner">
+                    <img srcset="./assets/images/banner-3.webp" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-content effect-title-auto h3-font color-white d-none"
+                data-delay="0.5"
+              >
+                Về Menas Group
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="progress-bar d-none"></div>
+              <div class="swiper-arrows">
+                <div class="swiper-prev">
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+                <div class="swiper-next">
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="scroll-wrap">
+        <div class="scroll-wrap-title h2-font-m color-text">
+          Dịch vụ tại Menas Mall Saigon Airport
+        </div>
+        <div class="container-fluid p-0">
+          <div class="row g-0 scroll-wrap-item">
+            <div class="scroll-wrap-image">
+              <div class="image animation-image-clip">
+                <img src="./assets/images/service-3.webp" alt="" />
+              </div>
+            </div>
+            <div class="scroll-wrap-content">
+              <div class="scroll-wrap-box">
+                <h3 class="h2-font-m title-box color-text">Dịch vụ catering</h3>
+                <div class="description-box b1-font-r color-text">
+                  Yum Food Village – Làng ẩm thực tại Tầng 5 Menas Mall Saigon
+                  Airport là đơn vị dịch vụ cung cấp tiệc trọn gói tinh tế – tỉ
+                  mỉ – tận tâm. Nếu bạn muốn có một buổi tiệc sinh nhật, tất
+                  niên, liên hoan công ty, tiệc gia đình đáng nhớ thì đây là lựa
+                  chọn hoàn hảo.
+                  <div class="br"></div>
+                  Thực đơn với hơn 650 món ngon đặc sắc từ ẩm thực ba miền và
+                  các quốc gia trên thế giới đáp ứng mọi nhu cầu khẩu vị và sở
+                  thích của mọi thực khách.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row g-0 scroll-wrap-item flex-lg-row-reverse">
+            <div class="scroll-wrap-image">
+              <div class="image animation-image-clip">
+                <img src="./assets/images/service-2.webp" alt="" />
+              </div>
+            </div>
+            <div class="scroll-wrap-content">
+              <div class="scroll-wrap-box">
+                <h3 class="h2-font-m title-box color-text">
+                  Dịch vụ khách đoàn
+                </h3>
+                <div class="description-box b1-font-r color-text">
+                  Trong chuyến tham quan du lịch, bạn có nhiều thứ để chuẩn bị
+                  như địa điểm dừng chân, vui chơi hay ăn uống,… thì đây là một
+                  địa điểm không thể bỏ lỡ khi tích hợp nhiều tiện ích bên
+                  trong.
+                  <div class="br"></div>
+                  Bên cạnh thực đơn đa dạng, Yum Food Village với diện tích hơn
+                  1.000m2 với không gian được thiết kế với không gian của ngôi
+                  làng truyền thống Việt Nam và chiếc view ngắm trọn sân bay Tân
+                  Sơn Nhất. Món ngon – Cảnh đẹp – Phục vụ chuyên nghiệp và đặc
+                  biệt khi đặt dịch vụ trước, Yum Food Village sẽ có nhiều ưu
+                  đãi dành cho khách đoàn.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row g-0 scroll-wrap-item">
+            <div class="scroll-wrap-image">
+              <div class="image animation-image-clip">
+                <img src="./assets/images/service-1.webp" alt="" />
+              </div>
+            </div>
+            <div class="scroll-wrap-content">
+              <div class="scroll-wrap-box">
+                <h3 class="h2-font-m title-box color-text">Tổ chức sự kiện</h3>
+                <div class="description-box b1-font-r color-text">
+                  Yum Food Village – Nơi lý tưởng để lựa chọn tổ chức sự kiện/
+                  hội thảo lý tưởng kèm dịch vụ ăn uống. Cam kết luôn mang đến
+                  khách hàng những buổi tiệc ấm cúng, chất lượng và tốt nhất.
+                  Với thực đơn phong phú và đa dạng được chế biến từ các đầu bếp
+                  tay nghề cao cùng cung cách phục vụ chu đáo, tận tình và
+                  chuyên nghiệp sẽ đem đến sự hài lòng cho Quý khách.
+                  <div class="br"></div>
+                  Hãy đến và tận hưởng sự tuyệt vời, tiện lợi khi được thưởng
+                  thức ẩm thực trong không gian thoải mái và ấm cúng tại Yum
+                  Food Village sau hàng giờ liền mua sắm thỏa thích tại Trung
+                  tâm thương mại Menas – Menas Mall Saigon Airport!
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- layout -->
     <!-- footer -->

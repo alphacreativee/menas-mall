@@ -36,6 +36,7 @@ a:hover {
   cursor: pointer;
   outline: none;
   color: inherit;
+  display: inline-block;
 }
 ul,
 ol {
@@ -60,4 +61,5 @@ body {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: auto !important;
   -moz-osx-font-smoothing: grayscale !important;
+  font-family: "SVN-Graphik", sans-serif !important;
 }
