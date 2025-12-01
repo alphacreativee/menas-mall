@@ -5,7 +5,6 @@
   --color-white: #fff;
   --color-bg: #f7f7f7;
   --color-bg-2: #efefef;
-  --color-mall: #fb3b0b;
 }
 
 .color-primary {
@@ -30,10 +29,6 @@
 
 .color-bg-2 {
   color: var(--color-bg-2);
-}
-
-.color-mall {
-  color: var(--color-mall);
 }
 
 .h1-font-m {
