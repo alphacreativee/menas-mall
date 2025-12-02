@@ -35,6 +35,7 @@
     <style>
       :root {
         --color-mall: #fb3b0b;
+        --color-primary: #fb3b0b;
       }
       .color-mall {
         color: var(--color-mall);
@@ -50,7 +51,7 @@
           document.getElementById("popup_select").innerHTML = data;
         });
     </script>
-    <div id="popup_select"></div>
+    <div id="popup_select" class="d-none"></div>
     <!-- layout -->
     <!-- header -->
     <script>
@@ -107,6 +108,14 @@
     </script>
     <header id="header"></header>
     <!-- end header -->
+
+    <!-- magic cursor -->
+    <div class="magic-cursor">
+      <div class="cursor">
+        <div class="text"></div>
+      </div>
+    </div>
+
     <main>
       <section class="hero has-slider">
         <div class="container-fluid p-0">
@@ -180,6 +189,414 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section-awards news"
+        style="--z-index: 2; --bg-section: #fff0e7"
+      >
+        <div class="awards-wrapper">
+          <h2
+            class="section-title h2-font text-center font-heading effect-title"
+          >
+            Tin tức & Sự kiện
+          </h2>
+          <div class="news-wrapper d-none d-lg-block">
+            <div class="news-featured">
+              <div class="news-slider-wrapper">
+                <div class="news-slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide overflow-hidden">
+                      <a
+                        href="./news-detail.html"
+                        class="news-image d-block"
+                        data-cursor-text="Chi tiết"
+                      >
+                        <img src="./assets/images/home/news/9.jpg" alt="" />
+                      </a>
+                    </div>
+                    <div class="swiper-slide overflow-hidden">
+                      <a
+                        href="./news-detail.html"
+                        class="news-image d-block"
+                        data-cursor-text="Chi tiết"
+                      >
+                        <img src="./assets/images/home/news/10.jpg" alt="" />
+                      </a>
+                    </div>
+                    <div class="swiper-slide overflow-hidden">
+                      <a
+                        href="./news-detail.html"
+                        class="news-image d-block"
+                        data-cursor-text="Chi tiết"
+                      >
+                        <img src="./assets/images/home/news/8.jpg" alt="" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news-slider-content">
+                <div class="swiper news-slider-text">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a
+                        href="./news-detail.html"
+                        class="content d-flex"
+                        data-cursor-text="Chi tiết"
+                      >
+                        <div class="date">21/08/2025</div>
+                        <div class="name">
+                          Saigon Oxford Bookstore: Nơi tri thức kết nối cộng
+                          đồng
+                        </div>
+                        <div class="desc">
+                          Khai trương vào ngày 12/09/2025, tại tầng 4 Menas Mall
+                          Saigon Airport (60A Trường Sơn, Tân Sơn Hòa, TP.HCM),
+                          đây không chỉ là một nhà sách bình thường – mà là nhà
+                          sách phi lợi nhuận đầu tiên tại Việt Nam.
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a
+                        href="./news-detail.html"
+                        class="content d-flex"
+                        data-cursor-text="Chi tiết"
+                      >
+                        <div class="date">26/09/2025</div>
+                        <div class="name">
+                          Mena Gourmet nhận giải “Dấu Ấn Thương Hiệu Việt Truyền
+                          Cảm Hứng” tại Lễ Vinh Danh
+                        </div>
+                        <div class="desc">
+                          Khai trương vào ngày 12/09/2025, tại tầng 4 Menas Mall
+                          Saigon Airport (60A Trường Sơn, Tân Sơn Hòa, TP.HCM),
+                          đây không chỉ là một nhà sách bình thường – mà là nhà
+                          sách phi lợi nhuận đầu tiên tại Việt Nam.
+                        </div>
+                      </a>
+                    </div>
+                    <div class="swiper-slide">
+                      <a
+                        href="./news-detail.html"
+                        class="content d-flex"
+                        data-cursor-text="Chi tiết"
+                      >
+                        <div class="date">21/08/2025</div>
+                        <div class="name">
+                          MENAS cung cấp giải pháp ẩm thực chuyên nghiệp tại Hội
+                          nghị sơ kết bán niên 2025
+                        </div>
+                        <div class="desc">
+                          Khai trương vào ngày 12/09/2025, tại tầng 4 Menas Mall
+                          Saigon Airport (60A Trường Sơn, Tân Sơn Hòa, TP.HCM),
+                          đây không chỉ là một nhà sách bình thường – mà là nhà
+                          sách phi lợi nhuận đầu tiên tại Việt Nam.
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-arrow-news">
+              <div class="swiper-button-prev swiper-custom-btn">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div class="swiper-button-next swiper-custom-btn">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="news-wrapper news-mobile-wrapper d-block d-lg-none">
+            <div class="swiper news-mobile">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="news-item">
+                    <a href="./news-detail.html" class="news-image d-block">
+                      <img src="./assets/images/home/news/9.jpg" alt="" />
+                    </a>
+                    <div class="news-content">
+                      <div class="date">21/08/2025</div>
+                      <div class="title">
+                        Saigon Oxford Bookstore: Nơi tri thức kết nối cộng đồng
+                      </div>
+                      <div class="description">
+                        Khai trương vào ngày 12/09/2025, tại tầng 4 Menas Mall
+                        Saigon Airport (60A Trường Sơn, Tân Sơn Hòa, TP.HCM),
+                        đây không chỉ là một nhà sách bình thường – mà là nhà
+                        sách phi lợi nhuận đầu tiên tại Việt Nam, được sáng lập
+                        bởi Công ty Menas với sứ mệnh lan tỏa văn hóa đọc và kết
+                        nối cộng đồng yêu tri thức.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-item">
+                    <a href="./news-detail.html" class="news-image d-block">
+                      <img src="./assets/images/home/news/10.jpg" alt="" />
+                    </a>
+                    <div class="news-content">
+                      <div class="date">21/08/2025</div>
+                      <div class="title">
+                        Saigon Oxford Bookstore: Nơi tri thức kết nối cộng đồng
+                      </div>
+                      <div class="description">
+                        Khai trương vào ngày 12/09/2025, tại tầng 4 Menas Mall
+                        Saigon Airport (60A Trường Sơn, Tân Sơn Hòa, TP.HCM),
+                        đây không chỉ là một nhà sách bình thường – mà là nhà
+                        sách phi lợi nhuận đầu tiên tại Việt Nam, được sáng lập
+                        bởi Công ty Menas với sứ mệnh lan tỏa văn hóa đọc và kết
+                        nối cộng đồng yêu tri thức.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-item">
+                    <a href="./news-detail.html" class="news-image d-block">
+                      <img src="./assets/images/home/news/8.jpg" alt="" />
+                    </a>
+                    <div class="news-content">
+                      <div class="date">21/08/2025</div>
+                      <div class="title">
+                        Saigon Oxford Bookstore: Nơi tri thức kết nối cộng đồng
+                      </div>
+                      <div class="description">
+                        Khai trương vào ngày 12/09/2025, tại tầng 4 Menas Mall
+                        Saigon Airport (60A Trường Sơn, Tân Sơn Hòa, TP.HCM),
+                        đây không chỉ là một nhà sách bình thường – mà là nhà
+                        sách phi lợi nhuận đầu tiên tại Việt Nam, được sáng lập
+                        bởi Công ty Menas với sứ mệnh lan tỏa văn hóa đọc và kết
+                        nối cộng đồng yêu tri thức.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-arrow-news">
+              <div class="swiper-button-prev swiper-custom-btn">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div class="swiper-button-next swiper-custom-btn">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="awards-main">
+            <div class="awards-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Trong không khí hân hoan và trang trọng, Lễ hội MENA
+                        OCOP - Quà tặng du lịch 2025
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/2.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Lễ ký kết thỏa thuận hợp tác giữa Menas với các đối tác
+                        nhà thuốc nhân dân
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/3.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Lễ ký kết hợp tác chiến lược giữa Menas và Epta Vietnam
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/4.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Sự kiện tổ chức hợp tác giữa Menas và đại diện Lamuse
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/5.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        MENAS cung cấp giải pháp ẩm thực chuyên nghiệp tại Hội
+                        nghị
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-custom-arrows">
+              <div class="arrow-prev arrow-custom">
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div class="arrow-next arrow-custom">
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+            <a
+              href=""
+              class="btn-view-all button-font color-text text-uppercase"
+            >
+              Xem tất cả
+              <div class="icon">
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </a>
           </div>
         </div>
       </section>
@@ -265,6 +682,130 @@
           </div>
         </div>
       </section>
+      <section class="logo-wrap" style="--z-index: 3">
+        <div class="logo-wrap-content">
+          <h3 class="h2-font font-heading color-text effect-title">
+            Đối tác đồng hành
+          </h3>
+        </div>
+        <div class="marquee-component">
+          <div
+            data-marquee-duplicate="2"
+            data-marquee-scroll-direction-target=""
+            data-marquee-direction="left"
+            data-marquee-status="normal"
+            data-marquee-speed="40"
+            data-marquee-scroll-speed="5"
+            class="marquee-wrap"
+          >
+            <div class="marquee-scroll" data-marquee-scroll-target="">
+              <div class="marquee-list-wrap" data-marquee-collection-target="">
+                <div class="marquee-list">
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-1.svg" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-3.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-4.svg" alt="" />
+                    </div>
+                    <div class="logo-name">KIDO Group</div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-5.svg" alt="" />
+                    </div>
+                    <div class="logo-name">Muji</div>
+                  </div>
+
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-8.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-9.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-10.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-marquee-duplicate="2"
+            data-marquee-scroll-direction-target=""
+            data-marquee-direction="right"
+            data-marquee-status="normal"
+            data-marquee-speed="40"
+            data-marquee-scroll-speed="5"
+            class="marquee-wrap"
+          >
+            <div class="marquee-scroll" data-marquee-scroll-target="">
+              <div class="marquee-list-wrap" data-marquee-collection-target="">
+                <div class="marquee-list">
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-11.svg" alt="" />
+                    </div>
+                    <div class="logo-name">Keppel</div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-12.svg" alt="" />
+                    </div>
+                    <div class="logo-name">Epta</div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-18.svg" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-15.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-17.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-16.svg" alt="" />
+                    </div>
+                  </div>
+
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-19.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="marquee-item">
+                    <div class="logo-icon">
+                      <img src="./assets/images/logo/logo-20.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- layout -->
     <!-- footer -->
@@ -290,6 +831,7 @@
     <!-- import custom js -->
     <script src="./assets/main/js/popup-select.min.js"></script>
     <script type="module" src="./assets/main/js/script.min.js"></script>
+    <script type="module" src="./assets/main/js/marquee.min.js"></script>
 
     <!-- end import custom js -->
   </body>

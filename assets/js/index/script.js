@@ -109,15 +109,15 @@ function hero() {
     keyboardControl: true,
     navigation: {
       nextEl: ".swiper-banner .swiper-next",
-      prevEl: ".swiper-banner .swiper-prev",
+      prevEl: ".swiper-banner .swiper-prev"
     },
     pagination: {
       el: ".swiper-banner .swiper-pagination",
-      type: "progressbar",
+      type: "progressbar"
     },
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false,
+      disableOnInteraction: false
     },
     on: {
       init: function (swiper) {
@@ -158,8 +158,8 @@ function hero() {
           img.style.transition = "transform 5000ms ease-out";
           img.style.transform = "scale(1)";
         }
-      },
-    },
+      }
+    }
   });
 
   if (
@@ -178,7 +178,7 @@ function hero() {
         } else {
           $(".hero").removeClass("hidden-section");
         }
-      },
+      }
     });
   }
 }
@@ -189,7 +189,7 @@ function swiperNews() {
     effect: "fade",
     loop: true,
     slidesPerView: 1,
-    speed: 900,
+    speed: 900
   });
 
   var swiperNews = new Swiper(".news-slider", {
@@ -207,11 +207,11 @@ function swiperNews() {
     // },
     navigation: {
       nextEl: ".news .swiper-button-next",
-      prevEl: ".news .swiper-button-prev",
+      prevEl: ".news .swiper-button-prev"
     },
     controller: {
-      control: swiperNewsContent,
-    },
+      control: swiperNewsContent
+    }
   });
 
   swiperNewsContent.controller.control = swiperNews;
@@ -221,15 +221,241 @@ function swiperNews() {
     slidesPerView: 1,
     navigation: {
       nextEl: ".news-mobile-wrapper .swiper-button-next",
-      prevEl: ".news-mobile-wrapper .swiper-button-prev",
-    },
+      prevEl: ".news-mobile-wrapper .swiper-button-prev"
+    }
   });
+}
+function sectionAwards() {
+  if ($(".section-awards").length < 1) return;
+
+  document.querySelectorAll(".section-awards").forEach((section) => {
+    const swiperEl = section.querySelector(".awards-slider");
+    const isAwardsSlider = section.id.includes("awards");
+
+    new Swiper(swiperEl, {
+      slidesPerView: isAwardsSlider ? 2 : 4,
+      spaceBetween: 30,
+      loop: false,
+      speed: 800,
+      autoplay: false,
+      navigation: {
+        prevEl: section.querySelector(".arrow-prev"),
+        nextEl: section.querySelector(".arrow-next")
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: isAwardsSlider ? "auto" : 4,
+          spaceBetween: 24
+        },
+        768: {
+          slidesPerView: isAwardsSlider ? "auto" : 3,
+          spaceBetween: 24
+        },
+        480: {
+          slidesPerView: isAwardsSlider ? 1 : 2,
+          spaceBetween: 24
+        },
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 24
+        }
+      }
+    });
+  });
+
+  // fade each items
+  gsap.utils.toArray(".section-awards").forEach((section) => {
+    const items = section.querySelectorAll(".news-item");
+
+    gsap.set(items, { y: 40, opacity: 0 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        end: "bottom bottom",
+        toggleActions: "play none none none"
+        // markers: true,
+      }
+    });
+
+    tl.to(items, {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+      stagger: 0.2
+    });
+  });
+}
+function hideMenuOnFooter() {
+  gsap.registerPlugin(ScrollTrigger);
+  // show menu chat
+  if ($(".chat-button").length > 0) {
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "top top-=180vh",
+      end: "bottom bottom",
+      onEnter: () => {
+        document.querySelector(".chat-button").classList.add("show-chat");
+      },
+      onLeaveBack: () => {
+        document.querySelector(".chat-button").classList.remove("show-chat");
+      }
+      // markers: true
+    });
+  }
+  // show menu fixed on scroll
+
+  if ($(".menu-fixed-bottom").length > 0) {
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "top top-=180vh",
+      end: "bottom bottom",
+      onEnter: () => {
+        document
+          .querySelector(".menu-fixed-bottom")
+          .classList.add("show-menu-fixed");
+      },
+      onLeaveBack: () => {
+        document
+          .querySelector(".menu-fixed-bottom")
+          .classList.remove("show-menu-fixed");
+      }
+      // markers: true
+    });
+
+    // hide menu fixed on footer
+    ScrollTrigger.create({
+      trigger: "footer",
+      start: "top bottom+=50",
+      end: "bottom bottom",
+      // markers: true,
+      onEnter: () => {
+        document
+          .querySelector(".menu-fixed-bottom")
+          .classList.add("hide-menu-fixed");
+      },
+      onLeaveBack: () => {
+        document
+          .querySelector(".menu-fixed-bottom")
+          .classList.remove("hide-menu-fixed");
+      }
+    });
+  }
+
+  gsap.fromTo(
+    ".footer-main",
+    { y: 100 },
+    {
+      y: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "body",
+        start: () => {
+          const heightFooter = document.querySelector("footer").offsetHeight;
+          return `bottom-=${heightFooter} bottom`;
+        },
+        end: "bottom bottom",
+        scrub: true,
+        // markers: true,
+        toggleActions: "play reverse play reverse",
+        invalidateOnRefresh: true // Quan trọng: tính lại khi refresh
+      }
+    }
+  );
+}
+function magicCursor() {
+  if (window.innerWidth < 1024) return;
+  const circle = document.querySelector(".magic-cursor");
+  if (!circle) return;
+
+  const cursorDot = circle.querySelector(".cursor");
+  const cursorText = circle.querySelector(".cursor .text");
+
+  gsap.set(circle, { xPercent: -50, yPercent: -50 });
+
+  let mouseX = 0,
+    mouseY = 0;
+
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    gsap.to(circle, {
+      x: mouseX,
+      y: mouseY,
+      duration: 0.1
+    });
+  });
+
+  // Hover handler chung, kiểm tra target instanceof Element
+  function handleMouseEnter(e) {
+    const el =
+      e.target instanceof Element
+        ? e.target.closest("[data-cursor-text], .modal")
+        : null;
+    if (!el) return;
+
+    let text = "";
+
+    if (el.classList.contains("modal")) {
+      if (lang === "en-US") {
+        text = "Close";
+      } else if (lang === "zh-CN") {
+        text = "关闭";
+      } else {
+        text = "Đóng";
+      }
+    } else {
+      text = el.dataset.cursorText || "";
+    }
+
+    cursorText.innerHTML = `<span class="color-white">${text}</span>`;
+    cursorDot.classList.add("show-text");
+  }
+
+  function handleMouseLeave(e) {
+    const el =
+      e.target instanceof Element
+        ? e.target.closest("[data-cursor-text], .modal")
+        : null;
+    if (!el) return;
+
+    cursorText.innerHTML = "";
+    cursorDot.classList.remove("show-text");
+  }
+
+  function handleModalDialogEnter(e) {
+    const el =
+      e.target instanceof Element ? e.target.closest(".modal-dialog") : null;
+    if (!el) return;
+
+    cursorDot.classList.remove("show-text");
+  }
+
+  function handleModalDialogLeave(e) {
+    const el =
+      e.target instanceof Element ? e.target.closest(".modal-dialog") : null;
+    if (!el) return;
+
+    cursorText.innerHTML = `<span class="color-white">Đóng</span>`;
+    cursorDot.classList.add("show-text");
+  }
+
+  document.addEventListener("mouseenter", handleMouseEnter, true);
+  document.addEventListener("mouseleave", handleMouseLeave, true);
+  document.addEventListener("mouseenter", handleModalDialogEnter, true);
+  document.addEventListener("mouseleave", handleModalDialogLeave, true);
 }
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
   hero();
   swiperNews();
+  sectionAwards();
+  hideMenuOnFooter();
+  magicCursor();
 };
 preloadImages("img").then(() => {
   init();
