@@ -448,6 +448,66 @@ function magicCursor() {
   document.addEventListener("mouseenter", handleModalDialogEnter, true);
   document.addEventListener("mouseleave", handleModalDialogLeave, true);
 }
+
+function fieldSuggestion() {
+  // Normalize string: remove Vietnamese accents
+  function removeVietnameseTones(str) {
+    return str
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // remove diacritics
+      .replace(/đ/g, "d")
+      .replace(/Đ/g, "D");
+  }
+
+  // When input is focused
+  $(".field-suggestion input").on("focus", function () {
+    const $list = $(this).siblings(".field-suggestion__list");
+
+    // Hide all other suggestion lists
+    $(".field-suggestion__list").addClass("hidden");
+
+    // Show current list
+    $list.removeClass("hidden");
+    filterList($list, ""); // show all items
+  });
+
+  // Filter when typing
+  $(".field-suggestion input").on("input", function () {
+    const value = removeVietnameseTones($(this).val().toLowerCase());
+    const $list = $(this).siblings(".field-suggestion__list");
+    filterList($list, value);
+    $list.removeClass("hidden");
+  });
+
+  // Select item
+  $(".field-suggestion").on("click", "li", function () {
+    const text = $(this).text();
+    console.log(text);
+
+    const $input = $(this).closest(".field-suggestion").find("input");
+    console.log($input);
+
+    $input.val(text);
+    $(this).parent().addClass("hidden");
+  });
+
+  // Click outside to hide all
+  $(document).on("click", function (e) {
+    if (!$(e.target).closest(".field-suggestion").length) {
+      $(".field-suggestion__list").addClass("hidden");
+    }
+  });
+
+  // Function: filter list items (accent-insensitive)
+  function filterList($list, value) {
+    $list.find("li").each(function () {
+      const text = $(this).text().toLowerCase();
+      const normalizedText = removeVietnameseTones(text);
+      $(this).toggle(normalizedText.includes(value));
+    });
+  }
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -456,6 +516,7 @@ const init = () => {
   sectionAwards();
   hideMenuOnFooter();
   magicCursor();
+  fieldSuggestion();
 };
 preloadImages("img").then(() => {
   init();

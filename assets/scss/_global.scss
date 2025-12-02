@@ -400,3 +400,33 @@ button {
     }
   }
 }
+
+.dropdown-custom-select {
+  position: relative;
+  .dropdown-custom-menu {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--color-white);
+    bottom: 0;
+    left: -0;
+    transform: translateY(100%);
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.3s ease;
+    will-change: clip-path;
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+
+    &.dropdown--active {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+  .dropdown-custom-text,
+  .dropdown-custom-item {
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+}
