@@ -61,7 +61,7 @@
   font-weight: 600;
 }
 
-.b2-font-r {
+.b2-font {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
@@ -1091,6 +1091,7 @@ button.aloading::after {
 @media (min-width: 1200px) {
   .footer-col.col-address {
     padding-left: 0px;
+    padding-right: 16px;
   }
 }
 @media (max-width: 1150px) and (min-width: 1151px) {
