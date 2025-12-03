@@ -508,6 +508,34 @@ function fieldSuggestion() {
   }
 }
 
+function parallaxSwiper() {
+  if (!document.querySelector(".media-list")) return;
+
+  const swiperRoom = new Swiper(".media-list", {
+    centeredSlides: true,
+    slidesPerView: 1.2,
+    initialSlide: 1,
+    speed: 900,
+    parallax: true,
+    loop: true,
+    spaceBetween: 8,
+    autoplay: {
+      delay: 2000
+    },
+    navigation: {
+      nextEl: ".media .swiper-button-next",
+      prevEl: ".media .swiper-button-prev"
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 1.7,
+        autoplay: false,
+        spaceBetween: 32
+      }
+    }
+  });
+}
+
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -517,6 +545,7 @@ const init = () => {
   hideMenuOnFooter();
   magicCursor();
   fieldSuggestion();
+  parallaxSwiper();
 };
 preloadImages("img").then(() => {
   init();

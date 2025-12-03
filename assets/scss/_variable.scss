@@ -6,6 +6,11 @@
   --color-bg: #f7f7f7;
   --color-bg-2: #efefef;
 }
+
+body {
+  color: var(--color-text);
+}
+
 // color
 .color-primary {
   color: var(--color-primary);
@@ -37,7 +42,8 @@
   line-height: 32px;
   font-weight: 500;
 }
-.b1-font-r {
+.b1-font-r,
+.b1-font {
   font-size: 17px;
   line-height: 24px;
   font-weight: 400;

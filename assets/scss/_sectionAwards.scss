@@ -3,7 +3,7 @@
   z-index: 1;
   background-color: var(--bg-section);
   &.field-detail-sec {
-    background-color: #f7f7f7;
+    background-color: var(--color-bg-primary);
   }
   &.detail {
     .btn-view-all {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping</title>
+    <title>Shopping detail</title>
     <!-- import favicon -->
     <link
       rel="icon"
@@ -193,259 +193,279 @@
           </div>
         </div>
       </section>
-      <section class="shopping">
-        <div class="shopping-wrapper">
-          <div class="shopping-search-bar">
-            <form action="">
-              <div class="shopping-search-item search">
-                <div class="field-suggestion">
-                  <input
-                    type="text"
-                    placeholder="Tìm thương hiệu"
-                    name="brand-name"
-                  />
-                  <div class="icon">
-                    <img src="./assets/images/icons/icon-search.svg" alt="" />
-                  </div>
-                  <ul class="field-suggestion__list hidden" data-lenis-prevent>
-                    <li>Highlands Coffee</li>
-                    <li>CGV Cinemas</li>
-                    <li>Phúc Long Coffee & Tea</li>
-                    <li>Cing Hua Tang</li>
-                    <li>Lotteria</li>
-                    <li>Skechers</li>
-                  </ul>
+      <section class="shopping-detail">
+        <div class="shopping-detail__wrapper">
+          <div class="col-left">
+            <h2 class="title h2-font-m">Highlands Coffee</h2>
+            <div class="desc b1-font">
+              <p>
+                Highlands Coffee là một thương hiệu cà phê nổi tiếng tại Việt
+                Nam. Được thành lập từ năm 1999, Highland Coffee tự hào với việc
+                sử dụng nguồn cà phê cao cấp từ các vùng đất cao nguyên miền
+                Trung và miền Tây.
+              </p>
+              <p>
+                Thương hiệu này cung cấp một loạt các sản phẩm cà phê đa dạng,
+                từ espresso truyền thống đến các loại đá xay và thức uống pha
+                trộn độc đáo. Ngoài cà phê, Highland Coffee cũng mang đến cho
+                khách hàng không gian thoải mái và ấm cúng để thưởng thức và tận
+                hưởng không chỉ cà phê mà còn là các món tráng miệng và thức ăn
+                đa dạng.
+              </p>
+            </div>
+            <ul class="more-info">
+              <li>
+                <div class="icon">
+                  <img src="./assets/images/icons/ic_time.svg" alt="" />
                 </div>
-              </div>
-              <div class="shopping-search-item brand">
-                <input type="hidden" name="location" />
-
-                <div class="dropdown-custom-select">
-                  <div class="dropdown-custom-btn">
-                    <div class="value-select">
-                      <span class="dropdown-custom-text">Chọn lĩnh vực</span>
-                    </div>
-                    <div class="icon">
-                      <svg
-                        width="11"
-                        height="6"
-                        viewBox="0 0 11 6"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.125 5.69347C5.43944 4.43563 6.89846 1.73127 10.219 0.976562"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        />
-                        <path
-                          d="M5.31543 5.69347C5.00099 4.43563 3.54197 1.73127 0.22144 0.976562"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="dropdown-custom-menu" data-lenis-prevent>
-                    <div class="dropdown-custom-item">
-                      <span>Thời trang & phụ kiện</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Siêu thị & Tiêu dùng</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Sức khoẻ & Làm đẹp</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Ẩm thực & Đồ uống</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Cửa hàng miễn thuế</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Vui chơi giải trí</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Giải trí</span>
-                    </div>
-                  </div>
+                <div class="text">Thứ 2 – Chủ Nhật, 9:00 – 21:00</div>
+              </li>
+              <li>
+                <div class="icon">
+                  <img src="./assets/images/icons/ic_location.svg" alt="" />
                 </div>
-              </div>
-              <div class="shopping-search-item location">
-                <input type="hidden" name="location" />
-
-                <div class="dropdown-custom-select">
-                  <div class="dropdown-custom-btn">
-                    <div class="value-select">
-                      <span class="dropdown-custom-text">Tất cả vị trí</span>
-                    </div>
-                    <div class="icon">
-                      <svg
-                        width="11"
-                        height="6"
-                        viewBox="0 0 11 6"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.125 5.69347C5.43944 4.43563 6.89846 1.73127 10.219 0.976562"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        />
-                        <path
-                          d="M5.31543 5.69347C5.00099 4.43563 3.54197 1.73127 0.22144 0.976562"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="dropdown-custom-menu" data-lenis-prevent>
-                    <div class="dropdown-custom-item">
-                      <span>Tầng 1</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Tầng 2</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Tầng 3</span>
-                    </div>
-                    <div class="dropdown-custom-item">
-                      <span>Tầng 4</span>
-                    </div>
-                  </div>
+                <div class="text">L1 - Tầng 1</div>
+              </li>
+              <li>
+                <div class="icon">
+                  <img src="./assets/images/icons/ic_phone_black.svg" alt="" />
                 </div>
-              </div>
-            </form>
-          </div>
-          <div class="shopping-main">
-            <ul>
-              <li>
-                <a
-                  href="./shopping-detail.html"
-                  class="brading-item"
-                  data-cursor-text="Chi tiết"
-                >
-                  <img src="./assets/images/shopping/1.png" alt="" />
-                  <div class="name b1-font-m color-text text-center">
-                    Highlands Coffee
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="./shopping-detail.html"
-                  class="brading-item"
-                  data-cursor-text="Chi tiết"
-                >
-                  <img src="./assets/images/shopping/1.png" alt="" />
-                  <div class="name b1-font-m color-text text-center">
-                    CGV Cinemas
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="./shopping-detail.html"
-                  class="brading-item"
-                  data-cursor-text="Chi tiết"
-                >
-                  <img src="./assets/images/shopping/1.png" alt="" />
-                  <div class="name b1-font-m color-text text-center">
-                    Phúc Long Coffee & Tea
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="./shopping-detail.html"
-                  class="brading-item"
-                  data-cursor-text="Chi tiết"
-                >
-                  <img src="./assets/images/shopping/1.png" alt="" />
-                  <div class="name b1-font-m color-text text-center">
-                    Cing Hua Tang
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="./shopping-detail.html"
-                  class="brading-item"
-                  data-cursor-text="Chi tiết"
-                >
-                  <img src="./assets/images/shopping/1.png" alt="" />
-                  <div class="name b1-font-m color-text text-center">
-                    Lotteria
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="./shopping-detail.html"
-                  class="brading-item"
-                  data-cursor-text="Chi tiết"
-                >
-                  <img src="./assets/images/shopping/1.png" alt="" />
-                  <div class="name b1-font-m color-text text-center">
-                    Skechers
-                  </div>
-                </a>
+                <a href="tel:02871089689">0287 108 9689</a>
               </li>
             </ul>
-            <div class="pagination">
-              <a
-                href="#"
-                class="prev-page page-number disabled"
-                aria-label="Previous page"
-              >
-                <svg
-                  width="6"
-                  height="11"
-                  viewBox="0 0 6 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style="transform: rotate(180deg)"
-                >
-                  <path
-                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <path
-                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-              </a>
-
-              <a href="#" class="page-number active">1</a>
-              <a href="#" class="page-number">2</a>
-              <a href="#" class="page-number">3</a>
-
-              <a href="#" class="next-page page-number" aria-label="Next page">
-                <svg
-                  width="6"
-                  height="11"
-                  viewBox="0 0 6 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <path
-                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-              </a>
+          </div>
+          <div class="col-right">
+            <div class="image">
+              <img src="./assets/images/shopping/detail/1.png" alt="" />
+              <div class="name b2-font-sm text-center">Sơ đồ tầng 1</div>
             </div>
           </div>
+        </div>
+      </section>
+      <section class="media">
+        <div class="container-fluid p-0">
+          <h3 class="media-title h1-font color-text effect-title">
+            Thư viện hình ảnh
+          </h3>
+          <div class="media-wrapper">
+            <div class="media-list swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/shopping/detail/2.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/shopping/detail/3.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/shopping/detail/4.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/shopping/detail/2.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-arrows">
+              <div class="swiper-button-prev button-custom">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div class="swiper-button-next button-custom">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section-awards"
+        style="--z-index: 2; --bg-section: #fef1e7"
+      >
+        <div class="awards-wrapper">
+          <h2
+            class="section-title h2-font text-center font-heading effect-title"
+          >
+            Tin tức & Sự kiện
+          </h2>
+          <div class="awards-main">
+            <div class="awards-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Trong không khí hân hoan và trang trọng, Lễ hội MENA
+                        OCOP - Quà tặng du lịch 2025
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/2.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Lễ ký kết thỏa thuận hợp tác giữa Menas với các đối tác
+                        nhà thuốc nhân dân
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/3.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Lễ ký kết hợp tác chiến lược giữa Menas và Epta Vietnam
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/4.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Sự kiện tổ chức hợp tác giữa Menas và đại diện Lamuse
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/5.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        MENAS cung cấp giải pháp ẩm thực chuyên nghiệp tại Hội
+                        nghị
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-custom-arrows">
+              <div class="arrow-prev arrow-custom">
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div class="arrow-next arrow-custom">
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <a href="" class="btn-view-all button-font color-text text-uppercase">
+            Xem tất cả
+            <div class="icon">
+              <svg
+                width="6"
+                height="11"
+                viewBox="0 0 6 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </a>
         </div>
       </section>
     </main>
