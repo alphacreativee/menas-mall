@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dining detail</title>
+    <!-- import favicon -->
+    <link
+      rel="icon"
+      href="./assets/images/menas-favicon-min.png"
+      type="image/x-icon"
+    />
+    <!-- meta -->
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta -->
+    <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lenis.css" />
+    <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
+    <!-- end meta -->
+    <!-- link custom css page -->
+    <link rel="stylesheet" href="./assets/fonts/SVN-Graphik/stylesheet.css" />
+    <link rel="stylesheet" href="./assets/main/css/style.min.css" />
+
+    <!-- end link custom css page -->
+    <!-- scrollRestoration -->
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    </script>
+    <style>
+      :root {
+        --color-mall: #fb3b0b;
+        --color-primary: #fb3b0b;
+        --color-bg-primary: #fef1e7;
+      }
+      .color-mall {
+        color: var(--color-mall);
+      }
+    </style>
+  </head>
+
+  <body>
+    <script>
+      fetch("./components/popup_select.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("popup_select").innerHTML = data;
+        });
+    </script>
+    <div id="popup_select" class="d-none"></div>
+    <!-- layout -->
+    <!-- header -->
+    <script>
+      fetch("./components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+          const currentPath = window.location.pathname || "/";
+
+          const navLinks = document.querySelectorAll(".header-menu ul>li>a");
+          navLinks.forEach((link) => {
+            const linkPath = link.getAttribute("href");
+
+            // Normalize paths for comparison
+            let normalizedCurrentPath = currentPath;
+            let normalizedLinkPath = linkPath;
+
+            // Remove leading "./" from link path
+            if (normalizedLinkPath.startsWith("./")) {
+              normalizedLinkPath = normalizedLinkPath.substring(1);
+            }
+
+            // Get the last segment of the path
+            const currentSegment = normalizedCurrentPath.split("/").pop() || "";
+            const linkSegment = normalizedLinkPath.split("/").pop() || "";
+
+            // Check if current path is root or ends with /
+            const isRootPath =
+              currentPath === "/" ||
+              currentPath.endsWith("/") ||
+              currentSegment === "";
+
+            // Check if link is home/index
+            const isHomeLink =
+              linkPath === "/" ||
+              linkPath === "./" ||
+              linkPath === "./index.html" ||
+              linkPath === "index.html" ||
+              linkSegment === "index.html";
+
+            // Match logic
+            const isMatch =
+              normalizedLinkPath === normalizedCurrentPath || // Exact match
+              currentSegment === linkSegment || // Segment match
+              (isRootPath && isHomeLink) || // Root path matches home link
+              (currentPath.endsWith(normalizedLinkPath) &&
+                normalizedLinkPath !== "/");
+
+            if (isMatch) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+    <header id="header"></header>
+    <!-- end header -->
+
+    <!-- magic cursor -->
+    <div class="magic-cursor">
+      <div class="cursor">
+        <div class="text"></div>
+      </div>
+    </div>
+
+    <main>
+      <section class="hero has-slider">
+        <div class="container-fluid p-0">
+          <div class="hero-sec__container">
+            <div class="swiper swiper-banner">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="slide-banner">
+                    <img srcset="./assets/images/banner-1.webp" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-banner">
+                    <img srcset="./assets/images/banner-2.webp" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="slide-banner">
+                    <img srcset="./assets/images/banner-3.webp" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-content effect-title-auto h3-font color-white d-none"
+                data-delay="0.5"
+              >
+                Về Menas Group
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="progress-bar d-none"></div>
+              <div class="swiper-arrows">
+                <div class="swiper-prev">
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+                <div class="swiper-next">
+                  <svg
+                    width="7"
+                    height="12"
+                    viewBox="0 0 7 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="shopping-detail">
+        <div class="shopping-detail__wrapper">
+          <div class="col-left">
+            <h2 class="title h2-font-m">V-Senses Dining</h2>
+            <div class="desc b1-font">
+              <p>
+                V-Senses Dining không chỉ là nơi để thưởng thức món ngon mà còn
+                là chốn gặp gỡ lý tưởng để kết nối với gia đình. Không gian ấm
+                cúng, thanh nhã tại đây được thiết kế để mỗi bữa ăn trở thành
+                một trải nghiệm đáng nhớ. Âm nhạc nhẹ nhàng và ánh sáng dịu êm
+                giúp tạo ra bầu không khí thoải mái.
+              </p>
+              <p>
+                Để đáp ứng nhu cầu của các gia đình, V-Senses Dining còn cung
+                cấp nhiều lựa chọn với set thực đơn gia đình.
+              </p>
+            </div>
+            <ul class="more-info">
+              <li>
+                <div class="icon">
+                  <img src="./assets/images/icons/ic_menu.svg" alt="" />
+                </div>
+                <a href="#">Menu</a>
+              </li>
+              <li>
+                <div class="icon">
+                  <img src="./assets/images/icons/ic_time.svg" alt="" />
+                </div>
+                <div class="text">Thứ 2 – Chủ Nhật, 9:00 – 21:00</div>
+              </li>
+              <li>
+                <div class="icon">
+                  <img src="./assets/images/icons/ic_location.svg" alt="" />
+                </div>
+                <div class="text">L1 - Tầng 1</div>
+              </li>
+              <li>
+                <div class="icon">
+                  <img src="./assets/images/icons/ic_phone_black.svg" alt="" />
+                </div>
+                <a href="tel:02871089689">0287 108 9689</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-right">
+            <div class="image">
+              <img src="./assets/images/shopping/detail/1.png" alt="" />
+              <div class="name b2-font-sm text-center">Sơ đồ tầng 1</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="reservation">
+        <div class="reservation-wrapper">
+          <h2 class="title h2-font-m">Liên hệ đặt bàn</h2>
+          <div class="reservation-form">
+            <form action="">
+              <div class="form-group-title b2-font-sm">Thông tin đặt bàn</div>
+              <div class="form-group">
+                <div class="form-item">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder=" "
+                    autocomplete="off"
+                  />
+                  <label for="name">Họ và tên <span>*</span></label>
+                </div>
+                <div class="form-item">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder=" "
+                    autocomplete="off"
+                    pattern="[0-9]{10,11}"
+                  />
+                  <label for="name">Số điện thoại <span>*</span></label>
+                </div>
+                <div class="form-item">
+                  <input
+                    type="number"
+                    name="people"
+                    placeholder=" "
+                    autocomplete="off"
+                  />
+                  <label for="people">Số người <span>*</span></label>
+                </div>
+                <div class="form-item">
+                  <div class="field-select-label">Dịch vụ <span>*</span></div>
+                  <div class="dropdown-custom-select">
+                    <div class="dropdown-custom-btn">
+                      <div class="dropdown-custom-text">Chọn dịch vụ</div>
+                      <div class="ic">
+                        <svg
+                          width="11"
+                          height="6"
+                          viewBox="0 0 11 6"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5.12695 5.69347C5.4414 4.43563 6.90042 1.73127 10.2209 0.976562"
+                            stroke="#1A3D4E"
+                            stroke-width="2"
+                          />
+                          <path
+                            d="M5.31641 5.69347C5.00196 4.43563 3.54294 1.73127 0.222417 0.976562"
+                            stroke="#1A3D4E"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="dropdown-custom-menu">
+                      <div class="dropdown-custom-item link-hover color-black">
+                        Fresher
+                      </div>
+                      <div class="dropdown-custom-item link-hover color-black">
+                        Junior
+                      </div>
+                      <div class="dropdown-custom-item link-hover color-black">
+                        Leader
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-item">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder=" "
+                    autocomplete="off"
+                  />
+                  <label for="email">Email <span>*</span></label>
+                </div>
+              </div>
+
+              <div class="suggest">
+                <div class="form-group-title b2-font-sm">Yêu cầu khác</div>
+                <div class="suggest-container">
+                  <div class="suggest-note">
+                    <div class="form-text-area">
+                      <textarea
+                        name=""
+                        id=""
+                        name="note"
+                        rows="5"
+                        placeholder=" "
+                      ></textarea>
+                      <label for="note">Mô tả chi tiết yêu cầu</label>
+                    </div>
+                  </div>
+                  <div class="suggest-col">
+                    <div class="form-item captcha-text">
+                      <input
+                        type="text"
+                        name="capcha"
+                        placeholder=" "
+                        autocomplete="off"
+                      />
+                      <label for="capcha">
+                        CAPTCHA - Nhập mã có trong hình ảnh <span>*</span>
+                      </label>
+                    </div>
+                    <div class="key-captcha">
+                      <div class="key-value">
+                        <img src="./assets/images/CAPTCHA.png" alt="" />
+                      </div>
+                      <div class="btn-refresh">
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#clip0_1511_3820)">
+                            <path
+                              d="M4.10156 8.42774C3.86719 9.0918 3.125 9.44336 2.5 9.20899C1.83594 8.97461 1.48438 8.27149 1.71875 7.60743C2.14844 6.39649 2.85156 5.26367 3.78906 4.32617C7.22656 0.927736 12.7344 0.927736 16.1719 4.32617L16.8359 5.0293V3.62305C16.8359 2.95899 17.4219 2.37305 18.0859 2.37305C18.7891 2.37305 19.3359 2.95899 19.3359 3.62305V7.99805C19.3359 8.70117 18.7891 9.24805 18.0859 9.24805H13.75C13.0469 9.24805 12.5 8.70117 12.5 7.99805C12.5 7.33399 13.0469 6.74805 13.75 6.74805H15.0781L14.4141 6.08399C11.9531 3.66211 8.00781 3.66211 5.54688 6.08399C4.88281 6.78711 4.375 7.56836 4.10156 8.42774ZM1.52344 11.8261C1.5625 11.7871 1.64062 11.7871 1.67969 11.7871C1.75781 11.7871 1.79688 11.748 1.875 11.748H6.25C6.91406 11.748 7.5 12.3339 7.5 12.998C7.5 13.7011 6.91406 14.248 6.25 14.248H4.88281L5.54688 14.9511C8.00781 17.373 11.9531 17.373 14.4141 14.9511C15.0781 14.248 15.5859 13.4668 15.8594 12.6074C16.0938 11.9433 16.8359 11.5918 17.4609 11.8261C18.125 12.0605 18.4766 12.7636 18.2422 13.4277C17.8125 14.6386 17.1094 15.7324 16.1719 16.7089C12.7344 20.1074 7.22656 20.1074 3.78906 16.7089L3.125 16.0058V17.373C3.125 18.0761 2.53906 18.623 1.875 18.623C1.17188 18.623 0.625 18.0761 0.625 17.373V13.0371C0.625 12.9589 0.625 12.8808 0.625 12.8418C0.625 12.7636 0.625 12.7246 0.664062 12.6855C0.703125 12.4902 0.820312 12.2949 0.976562 12.1386C1.13281 11.9824 1.32812 11.8652 1.52344 11.8261Z"
+                              fill="#1A3D4E"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_1511_3820">
+                              <rect width="20" height="20" fill="white" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-bottom">
+                <div class="form-note">
+                  Bằng việc ‘ĐĂNG KÝ’, bạn đồng ý với
+                  <span>
+                    <a href="./policy.html">Chính sách bảo mật</a>
+                  </span>
+                  của Menas.
+                </div>
+                <button type="submit">đăng ký</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="media">
+        <div class="container-fluid p-0">
+          <h3 class="media-title h1-font color-text effect-title">
+            Thư viện hình ảnh
+          </h3>
+          <div class="media-wrapper">
+            <div class="media-list swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/dining/detail/1.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/dining/detail/3.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/dining/detail/1.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/dining/detail/2.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="img-wrapper" data-swiper-parallax="15%">
+                    <img src="./assets/images/dining/detail/3.jpg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-arrows">
+              <div class="swiper-button-prev button-custom">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div class="swiper-button-next button-custom">
+                <svg
+                  width="7"
+                  height="12"
+                  viewBox="0 0 7 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.91183 5.96875C4.46529 5.60711 1.35523 3.92913 0.487304 0.11026"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.91183 5.75195C4.46529 6.11359 1.35523 7.79158 0.487305 11.6104"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section-awards"
+        style="--z-index: 2; --bg-section: #fef1e7"
+      >
+        <div class="awards-wrapper">
+          <h2
+            class="section-title h2-font text-center font-heading effect-title"
+          >
+            Tin tức & Sự kiện
+          </h2>
+          <div class="awards-main">
+            <div class="awards-slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Trong không khí hân hoan và trang trọng, Lễ hội MENA
+                        OCOP - Quà tặng du lịch 2025
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/2.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Lễ ký kết thỏa thuận hợp tác giữa Menas với các đối tác
+                        nhà thuốc nhân dân
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/3.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Lễ ký kết hợp tác chiến lược giữa Menas và Epta Vietnam
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/4.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        Sự kiện tổ chức hợp tác giữa Menas và đại diện Lamuse
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="news-item" data-cursor-text="Chi tiết">
+                    <div class="image">
+                      <img src="./assets/images/home/news/5.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="date">26/08/2025</div>
+                      <div class="name">
+                        MENAS cung cấp giải pháp ẩm thực chuyên nghiệp tại Hội
+                        nghị
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-custom-arrows">
+              <div class="arrow-prev arrow-custom">
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+              <div class="arrow-next arrow-custom">
+                <svg
+                  width="6"
+                  height="11"
+                  viewBox="0 0 6 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <a href="" class="btn-view-all button-font color-text text-uppercase">
+            Xem tất cả
+            <div class="icon">
+              <svg
+                width="6"
+                height="11"
+                viewBox="0 0 6 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.69249 5.31641C4.43465 5.00196 1.73029 3.54294 0.975586 0.222417"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M5.69249 5.12891C4.43465 5.44335 1.73029 6.90237 0.975586 10.2229"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+    <!-- layout -->
+    <!-- footer -->
+    <script>
+      fetch("./components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <footer id="footer"></footer>
+    <!-- end footer -->
+    <!-- end layout -->
+
+    <script src="./assets/libs/jquery-3.7.1.js"></script>
+    <script src="./assets/libs/lenis.min.js"></script>
+    <script src="./assets/libs/gsap.min.js"></script>
+    <script src="./assets/libs/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/SplitText.min.js"></script>
+    <script src="./assets/libs/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/imagesloaded.pkgd.min.js"></script>
+    <script src="./assets/libs/swiper-bundle.min.js"></script>
+    <!-- import custom js -->
+    <script src="./assets/main/js/popup-select.min.js"></script>
+    <script type="module" src="./assets/main/js/script.min.js"></script>
+    <script type="module" src="./assets/main/js/marquee.min.js"></script>
+
+    <!-- end import custom js -->
+  </body>
+</html>
+<!-- https://gsap.com/community/forums/topic/30338-circular-carouselslider/ -->

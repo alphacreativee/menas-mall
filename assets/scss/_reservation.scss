@@ -1,0 +1,274 @@
+.reservation {
+  background-color: var(--color-white);
+
+  &-wrapper {
+    padding: 40px 140px;
+  }
+
+  .title {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &-form {
+    .form {
+      &-group {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px 24px;
+
+        &-title {
+          margin-bottom: 16px;
+        }
+      }
+
+      &-item {
+        position: relative;
+        width: 100%;
+
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        input {
+          width: 100%;
+          border: none;
+          font-size: 14px;
+          line-height: 24px;
+          padding-bottom: 8px;
+          border-bottom: 1px solid rgba(26, 61, 78, 0.3);
+          color: var(--color-text);
+          border-radius: 0;
+
+          &:not(:placeholder-shown),
+          &:focus,
+          &:focus-visible {
+            & + label {
+              transform: translateY(calc(calc(-12px) - 100%));
+              font-size: 10px;
+              line-height: 14px;
+            }
+          }
+
+          &[type="number"] {
+            -moz-appearance: textfield;
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+
+        label {
+          position: absolute;
+          font-size: 14px;
+          line-height: 24px;
+          left: 0;
+          bottom: 6px;
+          transition: all 0.4s ease;
+          pointer-events: none;
+
+          span {
+            color: red;
+          }
+        }
+
+        .dropdown-custom-select {
+          position: relative;
+          width: 100%;
+          .dropdown-custom-menu {
+            position: absolute;
+            left: 0;
+            width: calc(100% + 12px);
+            z-index: 3;
+            background-color: var(--color-white-2);
+            bottom: 0;
+            left: -12px;
+            transform: translateY(100%);
+            clip-path: inset(0 0 100% 0);
+            transition: clip-path 0.3s ease;
+            will-change: clip-path;
+            display: flex;
+            padding: 12px;
+            flex-direction: column;
+            gap: 12px;
+
+            &.dropdown--active {
+              clip-path: inset(0 0 0 0);
+            }
+          }
+          .dropdown-custom-text,
+          .dropdown-custom-item {
+            font-size: 14px;
+            line-height: 24px;
+            padding: 0;
+            cursor: pointer;
+          }
+        }
+        .dropdown-custom-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px solid rgba(26, 61, 78, 0.3);
+          padding-bottom: 8px;
+        }
+
+        &.error {
+          input {
+            border-color: #ff0000;
+          }
+
+          label,
+          .field-select-label {
+            color: #ff0000;
+          }
+
+          .dropdown-custom-btn {
+            border-color: #ff0000;
+          }
+        }
+
+        .field-select-label {
+          font-size: 10px;
+          line-height: 14px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    .suggest {
+      margin-top: 24px;
+      &-note {
+        border: 1px solid rgba(26, 61, 78, 0.3);
+        border-radius: 8px;
+      }
+      &-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 24px;
+        @media (max-width: 991px) {
+          grid-template-columns: 1fr;
+          gap: 16px 0;
+        }
+      }
+      .form-text-area {
+        position: relative;
+        textarea {
+          resize: none;
+          width: 100%;
+
+          border: none;
+          font-size: 14px;
+          line-height: 24px;
+          padding: 16px;
+          color: var(--color-text);
+          &:not(:placeholder-shown) + label {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
+        label {
+          position: absolute;
+          left: 16px;
+          top: 16px;
+          top: 16px;
+          font-size: 14px;
+          line-height: 24px;
+          color: var(--color-text);
+          transition: opacity 0.3s ease, visibility 0.3s ease;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .captcha-text {
+      font-size: 14px;
+      line-height: 24px;
+      color: var(--color-text);
+
+      @media (max-width: 991px) {
+        margin-top: 16px;
+      }
+      span {
+        color: #ff0000;
+      }
+    }
+    .dropdown-custom-text {
+      span {
+        color: #ff0000;
+      }
+    }
+    .key-captcha {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .key-value {
+        width: 196px;
+        height: auto;
+        border-radius: 8px;
+        border: 1px solid rgba(26, 61, 78, 0.3);
+        padding: 10px;
+        overflow: hidden;
+
+        img {
+          object-fit: contain;
+        }
+      }
+      .btn-refresh {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        border: 1px solid var(--color-text);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &.aloading {
+          pointer-events: none;
+        }
+      }
+    }
+    .form-bottom {
+      margin-top: 8px;
+      .form-note {
+        margin-bottom: 24px;
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 500;
+        margin-top: 8px;
+        margin-bottom: 24px;
+        @media (max-width: 991px) {
+          margin-bottom: 16px;
+        }
+        a {
+          color: var(--color-primary);
+        }
+      }
+    }
+
+    button {
+      width: 212px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: var(--color-text);
+      font-size: 10px;
+      line-height: 14px;
+      text-transform: uppercase;
+      color: var(--color-white);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      @media (max-width: 991px) {
+        width: 100%;
+        display: block;
+      }
+      &:hover {
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
