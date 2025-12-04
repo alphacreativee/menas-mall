@@ -46,6 +46,12 @@ body {
   line-height: 32px;
   font-weight: 500;
 }
+@media (max-width: 991px) {
+  .h2-font-m {
+    font-size: 17px;
+    line-height: 24px;
+  }
+}
 
 .b1-font-r,
 .b1-font {
@@ -2438,13 +2444,65 @@ button.aloading::after {
   padding: 40px 140px;
   background: var(--color-bg-primary);
 }
+@media (max-width: 991px) {
+  .shopping {
+    padding: 16px 24px;
+  }
+}
 .shopping-search-bar {
   margin-bottom: 24px;
 }
 .shopping-search-bar form {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr;
   gap: 12px;
+}
+@media (max-width: 991px) {
+  .shopping-search-bar form {
+    grid-template-columns: 1fr;
+    position: relative;
+    margin-bottom: 24px;
+  }
+}
+.shopping-search-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 991px) {
+  .shopping-search-main {
+    grid-template-columns: 1fr;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    clip-path: inset(0 0 100% 0);
+    transition: all 0.3s ease;
+    will-change: clip-path;
+    margin-top: 12px;
+  }
+  .shopping-search-main.active {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@media (max-width: 991px) {
+  .shopping-search-left {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+}
+.shopping-search-left .icon-menu-mobile {
+  display: none;
+}
+@media (max-width: 991px) {
+  .shopping-search-left .icon-menu-mobile {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+  }
 }
 .shopping-search-item {
   background-color: var(--color-white);
@@ -2456,6 +2514,11 @@ button.aloading::after {
 }
 .shopping-search-item.search {
   padding: 0;
+}
+@media (max-width: 991px) {
+  .shopping-search-item.search {
+    width: 100%;
+  }
 }
 .shopping-search-item.search input {
   padding: 0 24px;
@@ -2511,6 +2574,11 @@ button.aloading::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
+}
+@media (max-width: 991px) {
+  .shopping-main ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 .brading-item {

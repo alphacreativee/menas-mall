@@ -1,14 +1,57 @@
 .shopping {
   padding: 40px 140px;
   background: var(--color-bg-primary);
-
+  @media (max-width: 991px) {
+    padding: 16px 24px;
+  }
   &-search {
     &-bar {
       margin-bottom: 24px;
       form {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 2fr;
         gap: 12px;
+        @media (max-width: 991px) {
+          grid-template-columns: 1fr;
+          position: relative;
+          margin-bottom: 24px;
+        }
+      }
+    }
+    &-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 3;
+        clip-path: inset(0 0 100% 0);
+        transition: all 0.3s ease;
+        will-change: clip-path;
+        margin-top: 12px;
+        &.active {
+          clip-path: inset(0 0 0 0);
+        }
+      }
+    }
+    &-left {
+      @media (max-width: 991px) {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .icon-menu-mobile {
+        display: none;
+        @media (max-width: 991px) {
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-color: red;
+        }
       }
     }
     &-item {
@@ -22,7 +65,9 @@
 
       &.search {
         padding: 0;
-
+        @media (max-width: 991px) {
+          width: 100%;
+        }
         input {
           padding: 0 24px;
           height: 40px;
@@ -91,6 +136,9 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
+      @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 }
