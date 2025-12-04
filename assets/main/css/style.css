@@ -2756,6 +2756,11 @@ button.aloading::after {
 .reservation-wrapper {
   padding: 40px 140px;
 }
+@media (max-width: 991px) {
+  .reservation-wrapper {
+    padding: 16px 24px;
+  }
+}
 .reservation .title {
   margin-bottom: 40px;
   text-align: center;
@@ -2764,6 +2769,11 @@ button.aloading::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px 24px;
+}
+@media (max-width: 991px) {
+  .reservation-form .form-group {
+    grid-template-columns: 1fr;
+  }
 }
 .reservation-form .form-group-title {
   margin-bottom: 16px;

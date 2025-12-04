@@ -3,6 +3,9 @@
 
   &-wrapper {
     padding: 40px 140px;
+    @media (max-width: 991px) {
+      padding: 16px 24px;
+    }
   }
 
   .title {
@@ -16,7 +19,9 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 32px 24px;
-
+        @media (max-width: 991px) {
+          grid-template-columns: 1fr;
+        }
         &-title {
           margin-bottom: 16px;
         }
