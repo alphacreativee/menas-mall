@@ -2092,11 +2092,6 @@ button.aloading::after {
 .section-awards .awards-slider.prize .awards-item {
   background-color: var(--color-white);
 }
-@media (max-width: 991px) {
-  .section-awards .awards-slider {
-    margin-top: 16px;
-  }
-}
 .section-awards .awards-slider .swiper-slide {
   height: auto;
 }
@@ -2454,7 +2449,7 @@ button.aloading::after {
 }
 .shopping-search-bar form {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 }
 @media (max-width: 991px) {
@@ -2701,8 +2696,20 @@ button.aloading::after {
   display: grid;
   grid-template-columns: 40% 60%;
 }
+@media (max-width: 991px) {
+  .shopping-detail__wrapper {
+    padding: 16px 24px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
 .shopping-detail__wrapper .col-left {
   padding-right: 100px;
+}
+@media (max-width: 991px) {
+  .shopping-detail__wrapper .col-left {
+    padding-right: 0;
+  }
 }
 .shopping-detail__wrapper .col-left .desc {
   margin-top: 12px;
@@ -2749,6 +2756,11 @@ button.aloading::after {
 .reservation-wrapper {
   padding: 40px 140px;
 }
+@media (max-width: 991px) {
+  .reservation-wrapper {
+    padding: 16px 24px;
+  }
+}
 .reservation .title {
   margin-bottom: 40px;
   text-align: center;
@@ -2757,6 +2769,11 @@ button.aloading::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px 24px;
+}
+@media (max-width: 991px) {
+  .reservation-form .form-group {
+    grid-template-columns: 1fr;
+  }
 }
 .reservation-form .form-group-title {
   margin-bottom: 16px;

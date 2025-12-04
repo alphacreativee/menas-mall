@@ -6,10 +6,16 @@
 
     display: grid;
     grid-template-columns: 40% 60%;
-
+    @media (max-width: 991px) {
+      padding: 16px 24px;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
     .col-left {
       padding-right: 100px;
-
+      @media (max-width: 991px) {
+        padding-right: 0;
+      }
       .desc {
         margin-top: 12px;
 
