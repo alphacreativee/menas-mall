@@ -578,6 +578,14 @@ function headerMobile() {
     }
   });
 }
+function searchIconShopping() {
+  if (window.innerWidth > 991) return;
+  const searchIcon = document.querySelector(".icon-menu-mobile");
+  const searchMain = document.querySelector(".shopping-search-main");
+  searchIcon.addEventListener("click", () => {
+    searchMain.classList.toggle("active");
+  });
+}
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -589,6 +597,7 @@ const init = () => {
   fieldSuggestion();
   parallaxSwiper();
   headerMobile();
+  searchIconShopping();
 };
 preloadImages("img").then(() => {
   init();
