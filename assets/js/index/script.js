@@ -537,9 +537,44 @@ function parallaxSwiper() {
 }
 function headerMobile() {
   const btnHamburger = document.querySelector(".hamburger");
-
+  const headerMain = document.querySelector(".header-main");
+  const subMenuLV2 = document.querySelector(
+    ".header-menu ul li.menu-item-has-children .sub-menu"
+  );
   btnHamburger.addEventListener("click", () => {
     btnHamburger.classList.toggle("active");
+    headerMain.classList.toggle("active");
+    subMenuLV2.classList.remove("show");
+  });
+
+  const menuItemsWithChildren = document.querySelectorAll(
+    ".header-menu ul li.menu-item-has-children"
+  );
+
+  menuItemsWithChildren.forEach((menuItem) => {
+    const link = menuItem.querySelector("a");
+    const subMenu = menuItem.querySelector("ul");
+
+    if (link) {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        menuItem.classList.toggle("active");
+        if (subMenu) {
+          subMenu.classList.toggle("show");
+        }
+      });
+    }
+
+    const subMenuBack = menuItem.querySelector(".sub-menu-back");
+    if (subMenuBack) {
+      subMenuBack.addEventListener("click", () => {
+        if (subMenu) {
+          subMenu.classList.remove("show");
+        }
+        menuItem.classList.remove("active");
+      });
+    }
   });
 }
 const init = () => {
