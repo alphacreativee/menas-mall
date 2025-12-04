@@ -109,15 +109,15 @@ function hero() {
     keyboardControl: true,
     navigation: {
       nextEl: ".swiper-banner .swiper-next",
-      prevEl: ".swiper-banner .swiper-prev"
+      prevEl: ".swiper-banner .swiper-prev",
     },
     pagination: {
       el: ".swiper-banner .swiper-pagination",
-      type: "progressbar"
+      type: "progressbar",
     },
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false
+      disableOnInteraction: false,
     },
     on: {
       init: function (swiper) {
@@ -158,8 +158,8 @@ function hero() {
           img.style.transition = "transform 5000ms ease-out";
           img.style.transform = "scale(1)";
         }
-      }
-    }
+      },
+    },
   });
 
   if (
@@ -178,7 +178,7 @@ function hero() {
         } else {
           $(".hero").removeClass("hidden-section");
         }
-      }
+      },
     });
   }
 }
@@ -189,7 +189,7 @@ function swiperNews() {
     effect: "fade",
     loop: true,
     slidesPerView: 1,
-    speed: 900
+    speed: 900,
   });
 
   var swiperNews = new Swiper(".news-slider", {
@@ -207,11 +207,11 @@ function swiperNews() {
     // },
     navigation: {
       nextEl: ".news .swiper-button-next",
-      prevEl: ".news .swiper-button-prev"
+      prevEl: ".news .swiper-button-prev",
     },
     controller: {
-      control: swiperNewsContent
-    }
+      control: swiperNewsContent,
+    },
   });
 
   swiperNewsContent.controller.control = swiperNews;
@@ -221,8 +221,8 @@ function swiperNews() {
     slidesPerView: 1,
     navigation: {
       nextEl: ".news-mobile-wrapper .swiper-button-next",
-      prevEl: ".news-mobile-wrapper .swiper-button-prev"
-    }
+      prevEl: ".news-mobile-wrapper .swiper-button-prev",
+    },
   });
 }
 function sectionAwards() {
@@ -240,26 +240,26 @@ function sectionAwards() {
       autoplay: false,
       navigation: {
         prevEl: section.querySelector(".arrow-prev"),
-        nextEl: section.querySelector(".arrow-next")
+        nextEl: section.querySelector(".arrow-next"),
       },
       breakpoints: {
         1024: {
           slidesPerView: isAwardsSlider ? "auto" : 4,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         768: {
           slidesPerView: isAwardsSlider ? "auto" : 3,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         480: {
           slidesPerView: isAwardsSlider ? 1 : 2,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         0: {
           slidesPerView: 1,
-          spaceBetween: 24
-        }
-      }
+          spaceBetween: 24,
+        },
+      },
     });
   });
 
@@ -274,9 +274,9 @@ function sectionAwards() {
         trigger: section,
         start: "top 70%",
         end: "bottom bottom",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
         // markers: true,
-      }
+      },
     });
 
     tl.to(items, {
@@ -284,7 +284,7 @@ function sectionAwards() {
       opacity: 1,
       duration: 0.6,
       ease: "power2.out",
-      stagger: 0.2
+      stagger: 0.2,
     });
   });
 }
@@ -301,7 +301,7 @@ function hideMenuOnFooter() {
       },
       onLeaveBack: () => {
         document.querySelector(".chat-button").classList.remove("show-chat");
-      }
+      },
       // markers: true
     });
   }
@@ -321,7 +321,7 @@ function hideMenuOnFooter() {
         document
           .querySelector(".menu-fixed-bottom")
           .classList.remove("show-menu-fixed");
-      }
+      },
       // markers: true
     });
 
@@ -340,7 +340,7 @@ function hideMenuOnFooter() {
         document
           .querySelector(".menu-fixed-bottom")
           .classList.remove("hide-menu-fixed");
-      }
+      },
     });
   }
 
@@ -360,8 +360,8 @@ function hideMenuOnFooter() {
         scrub: true,
         // markers: true,
         toggleActions: "play reverse play reverse",
-        invalidateOnRefresh: true // Quan trọng: tính lại khi refresh
-      }
+        invalidateOnRefresh: true, // Quan trọng: tính lại khi refresh
+      },
     }
   );
 }
@@ -385,7 +385,7 @@ function magicCursor() {
     gsap.to(circle, {
       x: mouseX,
       y: mouseY,
-      duration: 0.1
+      duration: 0.1,
     });
   });
 
@@ -520,19 +520,19 @@ function parallaxSwiper() {
     loop: true,
     spaceBetween: 8,
     autoplay: {
-      delay: 2000
+      delay: 2000,
     },
     navigation: {
       nextEl: ".media .swiper-button-next",
-      prevEl: ".media .swiper-button-prev"
+      prevEl: ".media .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 1.7,
         autoplay: false,
-        spaceBetween: 32
-      }
-    }
+        spaceBetween: 32,
+      },
+    },
   });
 }
 function headerMobile() {
@@ -588,7 +588,7 @@ function effectText() {
       {
         opacity: 0,
         y: 20,
-        willChange: "opacity, transform"
+        willChange: "opacity, transform",
       },
       {
         opacity: 1,
@@ -599,8 +599,8 @@ function effectText() {
         scrollTrigger: {
           trigger: element,
           start: "top 80%",
-          end: "bottom 80%"
-        }
+          end: "bottom 80%",
+        },
       }
     );
   }
@@ -619,7 +619,7 @@ function effectText() {
       const split = new SplitText(description, {
         type: "lines",
         linesClass: "line",
-        mask: "lines"
+        mask: "lines",
       });
 
       gsap.fromTo(
@@ -630,7 +630,7 @@ function effectText() {
           duration: 1,
           ease: "power3.out",
           stagger: 0.05,
-          delay: delay
+          delay: delay,
         }
       );
     }
@@ -643,7 +643,7 @@ function effectText() {
       const split = new SplitText(description, {
         type: "lines",
         linesClass: "line",
-        mask: "lines"
+        mask: "lines",
       });
 
       gsap.fromTo(
@@ -656,8 +656,8 @@ function effectText() {
           stagger: 0.05,
           scrollTrigger: {
             trigger: description,
-            start: "top 80%"
-          }
+            start: "top 80%",
+          },
         }
       );
     }
@@ -670,7 +670,7 @@ function effectText() {
       const split = new SplitText(description, {
         type: "lines",
         linesClass: "line",
-        mask: "lines"
+        mask: "lines",
       });
 
       gsap.fromTo(
@@ -682,8 +682,8 @@ function effectText() {
           ease: "power3.out",
           scrollTrigger: {
             trigger: description,
-            start: "top 80%"
-          }
+            start: "top 80%",
+          },
         }
       );
     }
@@ -694,7 +694,7 @@ function effectText() {
 
     const splitTitle = SplitText.create(title, {
       type: "words,chars",
-      mask: "words"
+      mask: "words",
     });
 
     gsap.set(splitTitle.chars, { y: "125%" });
@@ -704,7 +704,7 @@ function effectText() {
       ease: "power3.out",
       duration: 1,
       stagger: 0.03,
-      delay: delay
+      delay: delay,
     });
   });
 
@@ -714,7 +714,7 @@ function effectText() {
     const splitTitle = new SplitText(title, {
       type: "chars, words",
       charsClass: "char",
-      mask: "chars"
+      mask: "chars",
     });
 
     gsap.set(splitTitle.chars, { y: "125%", opacity: 0 });
@@ -729,9 +729,9 @@ function effectText() {
       scrollTrigger: {
         trigger: title,
         start: "top 80%",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
         // markers: true,
-      }
+      },
     });
   });
   gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -747,8 +747,8 @@ function effectText() {
       scrollTrigger: {
         trigger: scrollItem,
         start: start,
-        toggleActions: "play none none none"
-      }
+        toggleActions: "play none none none",
+      },
     });
 
     if (img) {
@@ -761,7 +761,7 @@ function effectText() {
       const split = new SplitText(title, {
         type: "chars,words",
         charsClass: "char",
-        mask: "chars"
+        mask: "chars",
       });
       gsap.set(split.chars, { y: "125%", opacity: 0 });
 
@@ -775,8 +775,8 @@ function effectText() {
           scrollTrigger: {
             trigger: title,
             start: "top 85%",
-            toggleActions: "play none none none"
-          }
+            toggleActions: "play none none none",
+          },
         });
       } else {
         tl.to(
@@ -786,7 +786,7 @@ function effectText() {
             opacity: 1,
             duration: 1,
             ease: "power3.out",
-            stagger: 0.03
+            stagger: 0.03,
           },
           `-=${0.8 - delay}`
         );
@@ -806,9 +806,9 @@ function effectText() {
           scrollTrigger: {
             trigger: desc,
             start: "top 85%",
-            toggleActions: "play none none none"
+            toggleActions: "play none none none",
             // markers: true,
-          }
+          },
         });
       } else {
         tl.to(
@@ -818,7 +818,7 @@ function effectText() {
             y: 0,
             duration: 1,
             ease: "power3.out",
-            delay: 0.2
+            delay: 0.2,
           },
           "<"
         );
@@ -839,9 +839,9 @@ function effectText() {
           scrollTrigger: {
             trigger: btn,
             start: "top 85%",
-            toggleActions: "play none none none"
+            toggleActions: "play none none none",
             // markers: true,
-          }
+          },
         });
       } else {
         // Desktop: Dùng timeline chung
@@ -852,7 +852,7 @@ function effectText() {
             y: 0,
             duration: 0.3,
             ease: "none",
-            delay: btnDelay
+            delay: btnDelay,
           },
           "<"
         );
@@ -880,7 +880,7 @@ const init = () => {
   parallaxSwiper();
   headerMobile();
   effectText();
-  searchIconShopping();
+  // searchIconShopping();
 };
 preloadImages("img").then(() => {
   init();
