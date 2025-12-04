@@ -729,9 +729,12 @@ button.aloading::after {
     width: 100%;
     height: calc(100dvh - 60px);
     background-color: var(--color-white);
-    justify-content: center;
     transition: all 0.3s ease;
     transform: translateX(100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    padding-top: 32px;
   }
   .header-main.active {
     transform: translateX(0);
