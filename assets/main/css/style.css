@@ -2454,7 +2454,7 @@ button.aloading::after {
 }
 .shopping-search-bar form {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
 }
 @media (max-width: 991px) {
