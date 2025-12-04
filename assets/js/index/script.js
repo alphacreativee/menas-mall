@@ -109,15 +109,15 @@ function hero() {
     keyboardControl: true,
     navigation: {
       nextEl: ".swiper-banner .swiper-next",
-      prevEl: ".swiper-banner .swiper-prev"
+      prevEl: ".swiper-banner .swiper-prev",
     },
     pagination: {
       el: ".swiper-banner .swiper-pagination",
-      type: "progressbar"
+      type: "progressbar",
     },
     autoplay: {
       delay: 5000,
-      disableOnInteraction: false
+      disableOnInteraction: false,
     },
     on: {
       init: function (swiper) {
@@ -158,8 +158,8 @@ function hero() {
           img.style.transition = "transform 5000ms ease-out";
           img.style.transform = "scale(1)";
         }
-      }
-    }
+      },
+    },
   });
 
   if (
@@ -178,7 +178,7 @@ function hero() {
         } else {
           $(".hero").removeClass("hidden-section");
         }
-      }
+      },
     });
   }
 }
@@ -189,7 +189,7 @@ function swiperNews() {
     effect: "fade",
     loop: true,
     slidesPerView: 1,
-    speed: 900
+    speed: 900,
   });
 
   var swiperNews = new Swiper(".news-slider", {
@@ -207,11 +207,11 @@ function swiperNews() {
     // },
     navigation: {
       nextEl: ".news .swiper-button-next",
-      prevEl: ".news .swiper-button-prev"
+      prevEl: ".news .swiper-button-prev",
     },
     controller: {
-      control: swiperNewsContent
-    }
+      control: swiperNewsContent,
+    },
   });
 
   swiperNewsContent.controller.control = swiperNews;
@@ -221,8 +221,8 @@ function swiperNews() {
     slidesPerView: 1,
     navigation: {
       nextEl: ".news-mobile-wrapper .swiper-button-next",
-      prevEl: ".news-mobile-wrapper .swiper-button-prev"
-    }
+      prevEl: ".news-mobile-wrapper .swiper-button-prev",
+    },
   });
 }
 function sectionAwards() {
@@ -240,26 +240,26 @@ function sectionAwards() {
       autoplay: false,
       navigation: {
         prevEl: section.querySelector(".arrow-prev"),
-        nextEl: section.querySelector(".arrow-next")
+        nextEl: section.querySelector(".arrow-next"),
       },
       breakpoints: {
         1024: {
           slidesPerView: isAwardsSlider ? "auto" : 4,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         768: {
           slidesPerView: isAwardsSlider ? "auto" : 3,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         480: {
           slidesPerView: isAwardsSlider ? 1 : 2,
-          spaceBetween: 24
+          spaceBetween: 24,
         },
         0: {
           slidesPerView: 1,
-          spaceBetween: 24
-        }
-      }
+          spaceBetween: 24,
+        },
+      },
     });
   });
 
@@ -274,9 +274,9 @@ function sectionAwards() {
         trigger: section,
         start: "top 70%",
         end: "bottom bottom",
-        toggleActions: "play none none none"
+        toggleActions: "play none none none",
         // markers: true,
-      }
+      },
     });
 
     tl.to(items, {
@@ -284,7 +284,7 @@ function sectionAwards() {
       opacity: 1,
       duration: 0.6,
       ease: "power2.out",
-      stagger: 0.2
+      stagger: 0.2,
     });
   });
 }
@@ -301,7 +301,7 @@ function hideMenuOnFooter() {
       },
       onLeaveBack: () => {
         document.querySelector(".chat-button").classList.remove("show-chat");
-      }
+      },
       // markers: true
     });
   }
@@ -321,7 +321,7 @@ function hideMenuOnFooter() {
         document
           .querySelector(".menu-fixed-bottom")
           .classList.remove("show-menu-fixed");
-      }
+      },
       // markers: true
     });
 
@@ -340,7 +340,7 @@ function hideMenuOnFooter() {
         document
           .querySelector(".menu-fixed-bottom")
           .classList.remove("hide-menu-fixed");
-      }
+      },
     });
   }
 
@@ -360,8 +360,8 @@ function hideMenuOnFooter() {
         scrub: true,
         // markers: true,
         toggleActions: "play reverse play reverse",
-        invalidateOnRefresh: true // Quan trọng: tính lại khi refresh
-      }
+        invalidateOnRefresh: true, // Quan trọng: tính lại khi refresh
+      },
     }
   );
 }
@@ -385,7 +385,7 @@ function magicCursor() {
     gsap.to(circle, {
       x: mouseX,
       y: mouseY,
-      duration: 0.1
+      duration: 0.1,
     });
   });
 
@@ -520,22 +520,63 @@ function parallaxSwiper() {
     loop: true,
     spaceBetween: 8,
     autoplay: {
-      delay: 2000
+      delay: 2000,
     },
     navigation: {
       nextEl: ".media .swiper-button-next",
-      prevEl: ".media .swiper-button-prev"
+      prevEl: ".media .swiper-button-prev",
     },
     breakpoints: {
       991: {
         slidesPerView: 1.7,
         autoplay: false,
-        spaceBetween: 32
-      }
+        spaceBetween: 32,
+      },
+    },
+  });
+}
+function headerMobile() {
+  const btnHamburger = document.querySelector(".hamburger");
+  const headerMain = document.querySelector(".header-main");
+  const subMenuLV2 = document.querySelector(
+    ".header-menu ul li.menu-item-has-children .sub-menu"
+  );
+  btnHamburger.addEventListener("click", () => {
+    btnHamburger.classList.toggle("active");
+    headerMain.classList.toggle("active");
+    subMenuLV2.classList.remove("show");
+  });
+
+  const menuItemsWithChildren = document.querySelectorAll(
+    ".header-menu ul li.menu-item-has-children"
+  );
+
+  menuItemsWithChildren.forEach((menuItem) => {
+    const link = menuItem.querySelector("a");
+    const subMenu = menuItem.querySelector("ul");
+
+    if (link) {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        menuItem.classList.toggle("active");
+        if (subMenu) {
+          subMenu.classList.toggle("show");
+        }
+      });
+    }
+
+    const subMenuBack = menuItem.querySelector(".sub-menu-back");
+    if (subMenuBack) {
+      subMenuBack.addEventListener("click", () => {
+        if (subMenu) {
+          subMenu.classList.remove("show");
+        }
+        menuItem.classList.remove("active");
+      });
     }
   });
 }
-
 const init = () => {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -546,6 +587,7 @@ const init = () => {
   magicCursor();
   fieldSuggestion();
   parallaxSwiper();
+  headerMobile();
 };
 preloadImages("img").then(() => {
   init();
