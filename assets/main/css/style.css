@@ -734,7 +734,7 @@ button.aloading::after {
     flex-direction: column;
     justify-content: flex-start;
     gap: 24px;
-    padding-top: 32px;
+    padding-top: 100px;
   }
   .header-main.active {
     transform: translateX(0);
@@ -879,6 +879,14 @@ button.aloading::after {
 }
 .header-menu ul li a:hover {
   color: var(--color-mall);
+}
+@media (max-width: 991px) {
+  .header-lang .value-select span {
+    font-weight: 600;
+  }
+  .header-lang .dropdown-custom-item {
+    font-weight: 600;
+  }
 }
 .header-lang .dropdown-custom-btn {
   justify-content: flex-end;

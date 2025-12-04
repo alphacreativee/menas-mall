@@ -47,7 +47,7 @@
       flex-direction: column;
       justify-content: flex-start;
       gap: 24px;
-      padding-top: 32px;
+      padding-top: 100px;
       &.active {
         transform: translateX(0);
       }
@@ -228,6 +228,14 @@
     }
   }
   &-lang {
+    @media (max-width: 991px) {
+      .value-select span {
+        font-weight: 600;
+      }
+      .dropdown-custom-item {
+        font-weight: 600;
+      }
+    }
     .dropdown-custom-btn {
       justify-content: flex-end;
       .value-select {
