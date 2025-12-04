@@ -173,7 +173,7 @@
     }
   }
   &-logo {
-    display: block;
+    display: block !important;
     width: 170px;
     height: auto;
     @media (max-width: 767px) {
