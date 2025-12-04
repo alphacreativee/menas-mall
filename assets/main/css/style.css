@@ -2092,11 +2092,6 @@ button.aloading::after {
 .section-awards .awards-slider.prize .awards-item {
   background-color: var(--color-white);
 }
-@media (max-width: 991px) {
-  .section-awards .awards-slider {
-    margin-top: 16px;
-  }
-}
 .section-awards .awards-slider .swiper-slide {
   height: auto;
 }
@@ -2701,8 +2696,20 @@ button.aloading::after {
   display: grid;
   grid-template-columns: 40% 60%;
 }
+@media (max-width: 991px) {
+  .shopping-detail__wrapper {
+    padding: 16px 24px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
 .shopping-detail__wrapper .col-left {
   padding-right: 100px;
+}
+@media (max-width: 991px) {
+  .shopping-detail__wrapper .col-left {
+    padding-right: 0;
+  }
 }
 .shopping-detail__wrapper .col-left .desc {
   margin-top: 12px;
