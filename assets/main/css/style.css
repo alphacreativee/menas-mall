@@ -46,6 +46,12 @@ body {
   line-height: 32px;
   font-weight: 500;
 }
+@media (max-width: 991px) {
+  .h2-font-m {
+    font-size: 17px;
+    line-height: 24px;
+  }
+}
 
 .b1-font-r,
 .b1-font {
@@ -2435,6 +2441,11 @@ button.aloading::after {
   padding: 40px 140px;
   background: var(--color-bg-primary);
 }
+@media (max-width: 991px) {
+  .shopping {
+    padding: 16px 24px;
+  }
+}
 .shopping-search-bar {
   margin-bottom: 24px;
 }
@@ -2508,6 +2519,11 @@ button.aloading::after {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
+}
+@media (max-width: 991px) {
+  .shopping-main ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 .brading-item {

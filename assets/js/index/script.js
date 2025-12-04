@@ -536,6 +536,7 @@ function parallaxSwiper() {
   });
 }
 function headerMobile() {
+  if (window.innerWidth > 991) return;
   const btnHamburger = document.querySelector(".hamburger");
   const headerMain = document.querySelector(".header-main");
   const subMenuLV2 = document.querySelector(

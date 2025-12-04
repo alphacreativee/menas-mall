@@ -1,7 +1,9 @@
 .shopping {
   padding: 40px 140px;
   background: var(--color-bg-primary);
-
+  @media (max-width: 991px) {
+    padding: 16px 24px;
+  }
   &-search {
     &-bar {
       margin-bottom: 24px;
@@ -91,6 +93,9 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
+      @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 }
