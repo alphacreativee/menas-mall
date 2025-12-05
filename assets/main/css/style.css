@@ -558,6 +558,10 @@ button.aloading::after {
   cursor: pointer;
 }
 
+.blank-spacing {
+  height: 60px;
+}
+
 .popup-select-wrapper {
   position: fixed;
   top: 0;
@@ -2049,8 +2053,21 @@ button.aloading::after {
   padding-left: 60px;
   padding-right: 60px;
 }
+@media (max-width: 991px) {
+  .section-awards.detail .awards-wrapper {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 72px;
+    padding-top: 16px;
+  }
+}
 .section-awards.detail .section-title {
   margin-bottom: 40px;
+}
+@media (max-width: 991px) {
+  .section-awards.detail .section-title {
+    margin-bottom: 16px;
+  }
 }
 .section-awards.detail .btn-view-all {
   top: 50px;
@@ -2205,7 +2222,7 @@ button.aloading::after {
 }
 .section-awards .arrow-custom:hover {
   color: var(--color-white);
-  background-color: var(--color-primary);
+  background-color: var(--color-mall);
 }
 .section-awards .arrow-custom.swiper-button-disabled {
   opacity: 0;
