@@ -3348,7 +3348,7 @@ button.aloading::after {
 .contact-sec .contact-left ul.social li a:hover svg path {
   fill: var(--color-primary);
 }
-.contact-sec .contact-left ul.phone {
+.contact-sec .contact-left ul li.phone {
   display: flex;
   align-items: center;
   gap: 4px;
