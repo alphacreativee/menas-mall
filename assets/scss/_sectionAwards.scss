@@ -6,6 +6,15 @@
     background-color: var(--color-bg-primary);
   }
   &.detail {
+    .awards-wrapper {
+      padding-bottom: 40px;
+      background-color: #fff0e7;
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+    .section-title {
+      margin-bottom: 40px;
+    }
     .btn-view-all {
       top: 50px;
       transform: translateY(0);
